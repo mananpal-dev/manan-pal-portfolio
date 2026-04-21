@@ -173,7 +173,7 @@ export default function Home() {
         <div className="stats-inner">
           <div><div className="stat-num">3+</div><div className="stat-lbl">ML Projects</div></div>
           <div><div className="stat-num">4th</div><div className="stat-lbl">Year · KIIT</div></div>
-          <div><div className="stat-num">2025</div><div className="stat-lbl">Graduating</div></div>
+          <div><div className="stat-num">2027</div><div className="stat-lbl">Graduating</div></div>
         </div>
       </div>
 
@@ -182,7 +182,7 @@ export default function Home() {
         <div className="looking-dot" />
         <p className="looking-text">
           <strong>Currently looking for</strong> full-time SWE / ML Engineer roles and internships
-          — available from mid-2025. Open to on-site, hybrid, or remote positions.
+          — currently available. Open to on-site, hybrid, or remote positions.
         </p>
       </div>
 
@@ -303,9 +303,9 @@ export default function Home() {
             <div>
               <div className="edu-degree">B.Tech in Computer Science &amp; Engineering</div>
               <div className="edu-school">Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar</div>
-              <div className="edu-meta">2021 – 2025 &nbsp;·&nbsp; Bhubaneswar, Odisha, India</div>
+              <div className="edu-meta">2023 – 2027 &nbsp;·&nbsp; Bhubaneswar, Odisha, India</div>
               <div className="edu-badges">
-                <span className="badge-green">Final Year · Graduating 2025</span>
+                <span className="badge-green">Final Year · Graduating 2027</span>
                 <span className="badge-blue">Computer Science</span>
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>© 2025 Manan Pal · KIIT University, Bhubaneswar · Built with care</footer>
+      <footer>© 2027 Manan Pal · KIIT University, Bhubaneswar · Built with care</footer>
     </>
   );
 }
