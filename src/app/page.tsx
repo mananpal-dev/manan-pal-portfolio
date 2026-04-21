@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   useEffect(() => {
@@ -344,6 +345,7 @@ export default function Home() {
       </section>
 
       <footer>© 2027 Manan Pal · KIIT University, Bhubaneswar · Built with care</footer>
+      <Analytics />
     </>
   );
 }
