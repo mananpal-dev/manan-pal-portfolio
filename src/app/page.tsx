@@ -443,7 +443,7 @@ export default function Home() {
 
           <div className="fade-in btn-row">
             <a
-              href="/resume.pdf"
+              href="/Manan_Pal_Resume.pdf"
               download="Manan_Pal_Resume.pdf"
               className="btn-p"
             >
