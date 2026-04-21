@@ -442,7 +442,13 @@ export default function Home() {
           </div>
 
           <div className="fade-in btn-row">
-            <a href="/resume.pdf" download className="btn-p">⬇ Download Resume</a>
+            <a
+              href="/resume.pdf"
+              download="Manan_Pal_Resume.pdf"
+              className="btn-p"
+            >
+              ⬇ Download Resume
+            </a>
             <a href="#projects" className="btn-o">View Projects</a>
             <a href="mailto:mananpal27@gmail.com" className="btn-o">Get In Touch</a>
           </div>
