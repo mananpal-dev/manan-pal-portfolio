@@ -370,6 +370,8 @@ export default function Home() {
           padding: 2.2rem;
           position: relative;
           overflow: hidden;
+          display: flex;
+          flex-direction: column;
         }
 
         .hero-main::after {
@@ -430,6 +432,7 @@ export default function Home() {
           color: var(--muted-strong);
           font-size: 1.04rem;
           line-height: 1.85;
+          flex: 1;
         }
 
         .hero-proof,
@@ -1079,8 +1082,14 @@ export default function Home() {
                   <a className="button-secondary" href="#projects">
                     View Projects
                   </a>
-                  <a className="button-ghost" href="mailto:mananpal27@gmail.com">
-                    Email Me
+                  <a
+                    className="button-ghost"
+                    href="mailto:mananpal27@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="mananpal27@gmail.com"
+                  >
+                    ✉ mananpal27@gmail.com
                   </a>
                 </div>
               </div>
