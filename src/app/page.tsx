@@ -133,35 +133,8 @@ const virtualInternships = [
   { domain: "Generative AI", org: "AICTE EduSkills 2025" },
 ];
 
-type GithubStats = {
-  repos: number | null;
-  stars: number | null;
-};
-
 export default function Home() {
-  const [githubStats, setGithubStats] = useState<GithubStats>({ repos: null, stars: null });
   const [barsVisible, setBarsVisible] = useState(false);
-
-  useEffect(() => {
-    fetch("https://api.github.com/users/mananpal-dev")
-      .then((r) => r.json())
-      .then((d: { public_repos?: number }) => {
-        if (typeof d.public_repos === "number") {
-          setGithubStats((prev) => ({ ...prev, repos: d.public_repos ?? null }));
-        }
-      })
-      .catch(() => {});
-
-    fetch("https://api.github.com/users/mananpal-dev/repos?per_page=100")
-      .then((r) => r.json())
-      .then((repos: Array<{ stargazers_count?: number }>) => {
-        if (Array.isArray(repos)) {
-          const stars = repos.reduce((acc, repo) => acc + (repo.stargazers_count || 0), 0);
-          setGithubStats((prev) => ({ ...prev, stars }));
-        }
-      })
-      .catch(() => {});
-  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -668,33 +641,51 @@ export default function Home() {
           font-size: 0.92rem;
         }
 
-        .github-stats {
+        /* Quick contact strip */
+        .quick-contact {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.6rem;
+          gap: 0.45rem;
         }
 
-        .github-stat {
-          padding: 0.75rem 0.9rem;
-          border-radius: 14px;
-          background: rgba(56, 189, 248, 0.05);
-          border: 1px solid rgba(56, 189, 248, 0.14);
-          text-align: center;
+        .qc-item {
+          display: flex;
+          align-items: center;
+          gap: 0.7rem;
+          padding: 0.55rem 0.85rem;
+          border-radius: 12px;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(148, 163, 184, 0.12);
+          text-decoration: none;
+          transition: border-color 0.2s ease, background 0.2s ease;
         }
 
-        .github-stat-num {
-          font-size: 1.35rem;
-          font-weight: 700;
+        .qc-item:hover {
+          border-color: rgba(251, 191, 36, 0.28);
+          background: rgba(255,255,255,0.055);
+        }
+
+        .qc-icon {
+          width: 1.6rem;
+          height: 1.6rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 7px;
+          background: rgba(56, 189, 248, 0.08);
+          border: 1px solid rgba(56, 189, 248, 0.16);
           color: var(--sky);
+          font-size: 0.72rem;
+          font-weight: 800;
+          flex-shrink: 0;
           font-family: "Space Grotesk", sans-serif;
         }
 
-        .github-stat-label {
-          font-size: 0.72rem;
-          color: var(--muted);
-          text-transform: uppercase;
-          letter-spacing: 0.07em;
-          margin-top: 0.15rem;
+        .qc-text {
+          color: var(--muted-strong);
+          font-size: 0.8rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .mini-list {
@@ -1131,23 +1122,6 @@ export default function Home() {
                     work that can be explained clearly to both technical and non-technical teams.
                   </p>
                 </div>
-
-                {(githubStats.repos !== null || githubStats.stars !== null) && (
-                  <div data-fade className="github-stats">
-                    {githubStats.repos !== null && (
-                      <div className="github-stat">
-                        <div className="github-stat-num">{githubStats.repos}</div>
-                        <div className="github-stat-label">Public Repos</div>
-                      </div>
-                    )}
-                    {githubStats.stars !== null && (
-                      <div className="github-stat">
-                        <div className="github-stat-num">{githubStats.stars}</div>
-                        <div className="github-stat-label">GitHub Stars</div>
-                      </div>
-                    )}
-                  </div>
-                )}
 
                 {/* ── Virtual Internships ── */}
                 <div data-fade>
