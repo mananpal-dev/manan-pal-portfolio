@@ -1,44 +1,42 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://manan-pal-portfolio.vercel.app"),
 
   title: {
-    default: "Manan Pal | ML Engineer & AI Developer",
+    default: "Manan Pal | AI & Full Stack Developer",
     template: "%s | Manan Pal",
   },
 
   description:
-    "Portfolio of Manan Pal — ML Engineer, AI Developer, and CS student at KIIT University. Building graph neural networks, computer vision systems, and full-stack AI products with measurable real-world outcomes.",
+    "Portfolio of Manan Pal — AI Developer, Full Stack Developer, and Machine Learning Enthusiast building modern web applications, intelligent systems, and impactful digital experiences.",
 
   keywords: [
     "Manan Pal",
-    "ML Engineer",
     "AI Developer",
+    "Full Stack Developer",
     "Machine Learning",
     "Deep Learning",
-    "Graph Neural Networks",
-    "Computer Vision",
-    "PyTorch",
-    "TensorFlow",
     "Next.js Developer",
+    "React Developer",
     "Python Developer",
-    "KIIT University",
-    "Software Engineer Intern",
-    "Applied AI",
-    "Portfolio",
+    "Portfolio Website",
+    "Software Engineer",
   ],
 
-  authors: [{ name: "Manan Pal", url: "https://github.com/mananpal-dev" }],
+  authors: [{ name: "Manan Pal" }],
   creator: "Manan Pal",
   publisher: "Manan Pal",
 
@@ -49,17 +47,17 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Manan Pal | ML Engineer & AI Developer",
+    title: "Manan Pal | AI & Full Stack Developer",
     description:
-      "Explore ML projects, graph security systems, computer vision benchmarks, and full-stack AI applications built by Manan Pal — KIIT CSE 2027.",
-    url: "https://manan-pal-portfolio.vercel.app",
+      "Explore projects, skills, achievements, and AI-powered applications built by Manan Pal.",
+    url: "https://manan-pal-portfolio.vercel.app/",
     siteName: "Manan Pal Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Manan Pal — ML Engineer & AI Developer Portfolio",
+        alt: "Manan Pal Portfolio",
       },
     ],
     locale: "en_US",
@@ -68,20 +66,15 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Manan Pal | ML Engineer & AI Developer",
+    title: "Manan Pal | AI & Full Stack Developer",
     description:
-      "ML Engineer & AI Developer — 99.8% ViT accuracy, GNN security systems, and full-stack AI products. Open to SWE and ML internships.",
+      "AI Developer & Full Stack Developer building intelligent digital experiences.",
     images: ["/og-image.png"],
   },
 
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-    },
   },
 
   category: "technology",
@@ -95,9 +88,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
-      <body className="antialiased overflow-x-hidden">
+      <body className="bg-black text-white antialiased overflow-x-hidden">
         {children}
       </body>
     </html>

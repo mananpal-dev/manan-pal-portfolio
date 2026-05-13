@@ -147,7 +147,7 @@ export default function Home() {
       .then((r) => r.json())
       .then((d: { public_repos?: number }) => {
         if (typeof d.public_repos === "number") {
-          setGithubStats((prev) => ({ ...prev, repos: d.public_repos }));
+          setGithubStats((prev) => ({ ...prev, repos: d.public_repos ?? null }));
         }
       })
       .catch(() => {});
