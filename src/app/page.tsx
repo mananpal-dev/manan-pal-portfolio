@@ -24,10 +24,17 @@ const featuredProjects = [
   {
     title: "ResumeRanker",
     href: "https://github.com/mananpal-dev/ResumeRanker",
+    live: "https://resume-ranker-by-manan.streamlit.app/",
     badge: "Applied NLP",
     outcome:
       "Created a recruiter-facing ranking workflow that parses resumes, scores candidates, and explains gaps against a job description.",
-    highlights: ["PDF parsing", "TF-IDF matching", "Scikit-learn", "Explainable scoring"],
+    highlights: [
+      "LIVE DEPLOYED APP",
+      "PDF parsing",
+      "TF-IDF matching",
+      "Scikit-learn",
+      "Explainable scoring",
+    ],
   },
   {
     title: "Student Placement Readiness Prediction",
@@ -35,7 +42,12 @@ const featuredProjects = [
     badge: "ML · Predictive",
     outcome:
       "Benchmarked four classifiers on student academic and extracurricular features. Random Forest achieved 89.5% accuracy with real-time predictions via a Tkinter GUI.",
-    highlights: ["Random Forest 89.5%", "SVM · KNN · LR", "Feature importance viz", "Tkinter GUI"],
+    highlights: [
+      "Random Forest 89.5%",
+      "SVM · KNN · LR",
+      "Feature importance viz",
+      "Tkinter GUI",
+    ],
   },
 ];
 
@@ -847,7 +859,6 @@ export default function Home() {
           display: flex;
           flex-direction: column;
           gap: 1rem;
-          text-decoration: none;
           transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
         }
 
@@ -877,9 +888,10 @@ export default function Home() {
         }
 
         .project-link {
-          color: var(--sky);
+          color: var(--mint);
           font-size: 0.78rem;
-          font-weight: 700;
+          font-weight: 800;
+          letter-spacing: 0.04em;
         }
 
         .project-title {
@@ -1259,19 +1271,16 @@ export default function Home() {
 
               <div className="project-grid">
                 {featuredProjects.map((project) => (
-                  <a
-                    key={project.title}
-                    className="project-card"
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <div key={project.title} className="project-card">
                     <div className="project-meta">
                       <span className="project-badge">{project.badge}</span>
-                      <span className="project-link">GitHub -&gt;</span>
+                      <span className="project-link">Featured Project</span>
                     </div>
+
                     <h3 className="project-title">{project.title}</h3>
+
                     <p className="project-copy">{project.outcome}</p>
+
                     <div className="highlight-list">
                       {project.highlights.map((highlight) => (
                         <span className="highlight" key={highlight}>
@@ -1279,7 +1288,46 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-                  </a>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "0.7rem",
+                        marginTop: "auto",
+                        flexWrap: "wrap",
+                      }}
+                    >
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="button-secondary"
+                        style={{
+                          padding: "0.7rem 1rem",
+                          fontSize: "0.82rem",
+                          textDecoration: "none",
+                        }}
+                      >
+                        View GitHub
+                      </a>
+
+                      {"live" in project && project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="button-primary"
+                          style={{
+                            padding: "0.7rem 1rem",
+                            fontSize: "0.82rem",
+                            textDecoration: "none",
+                          }}
+                        >
+                          Live Demo ↗
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
