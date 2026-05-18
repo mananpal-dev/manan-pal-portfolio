@@ -39,6 +39,7 @@ const featuredProjects = [
   {
     title: "Student Placement Readiness Prediction",
     href: "https://github.com/mananpal-dev",
+    live: "https://placement-readiness-prediction-ml-by-manan.streamlit.app/",
     badge: "ML · Predictive",
     outcome:
       "Benchmarked four classifiers on student academic and extracurricular features. Random Forest achieved 89.5% accuracy with real-time predictions via a Tkinter GUI.",
